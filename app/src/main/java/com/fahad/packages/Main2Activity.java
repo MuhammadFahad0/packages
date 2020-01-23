@@ -60,6 +60,7 @@ public class Main2Activity extends AppCompatActivity {
     public void back(View view)
     {
         onBackPressed();
+
     }
 
     public void all(View view) { newwcativty("ALL IN ONE"); }
@@ -93,7 +94,7 @@ public class Main2Activity extends AppCompatActivity {
         }else
         {
             startActivity(intent);
-
+            
         }
 
         }

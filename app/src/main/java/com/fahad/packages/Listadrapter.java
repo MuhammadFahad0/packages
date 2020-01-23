@@ -57,7 +57,7 @@ public class Listadrapter extends BaseAdapter {
         viewHolder.Volume.setText(Html.fromHtml("<b> Volume: </b> " +currentItem.getVolume().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
         viewHolder.Activation.setText(Html.fromHtml("<b> Activaton: </b> " +currentItem.getActivation().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
         viewHolder.Deactivation.setText(Html.fromHtml("<b> Deactivation: </b> " +currentItem.getDeactivation().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
-        viewHolder.Remaining.setText(Html.fromHtml("<b> Volume: </b> " +currentItem.getRemaining().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
+        viewHolder.Remaining.setText(Html.fromHtml("<b> Remaining: </b> " +currentItem.getRemaining().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
         viewHolder.Info.setText(Html.fromHtml("<b> Info: </b> " +currentItem.getInfo().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
         viewHolder.Price.setText(Html.fromHtml("<b> Price: </b> " +currentItem.getPrice().replace("\\n", System.getProperty("line.separator")).replace(">", "Then Replay")));
 

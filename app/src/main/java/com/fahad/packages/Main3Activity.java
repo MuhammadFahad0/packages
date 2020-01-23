@@ -190,6 +190,6 @@ public class Main3Activity extends AppCompatActivity {
     public void bback(View view)
     {
         onBackPressed();
-    }
+        }
 
     }
