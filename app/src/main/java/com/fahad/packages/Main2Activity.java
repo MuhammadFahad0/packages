@@ -94,7 +94,6 @@ public class Main2Activity extends AppCompatActivity {
         }else
         {
             startActivity(intent);
-            
         }
 
         }
