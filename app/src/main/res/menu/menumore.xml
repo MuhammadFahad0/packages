@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/balance"
+        android:title="Check Remaining Balance" />
+    <item
+        android:id="@+id/sms"
+        android:title="Check Remaining SMS" />
+    <item
+        android:id="@+id/minuts"
+        android:title="Check Remaining Minutes" />
+    <item
+        android:id="@+id/internet"
+        android:title="Check Remaining Internet" />
+    <item
+        android:id="@+id/recharge"
+        android:title="Card Recharge" />
+    <item
+        android:id="@+id/advance"
+        android:title="Get Advance Balance" />
+    <item
+        android:id="@+id/balanceshare"
+        android:title="Balance Share" />
+</menu>
