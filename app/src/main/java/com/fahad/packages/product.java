@@ -1,59 +1,61 @@
 package com.fahad.packages;
 
 public class product {
-    String Title;
-    String Duration;
-    String Volume;
-    String Activation;
-    String Deactivation;
-    String Remaining;
-    String Info;
 
-    public String getTitle() {
-        return Title;
+    String ACTIVATION;
+    String DEACTIVATION;
+    String VOLUME;
+    String DURATION;
+    String INFO;
+    String PRICE;
+    String REMAINING;
+    String TITLE;
+
+    public product(String ACTIVATION, String DEACTIVATION, String DURATION, String INFO,  String PRICE, String REMAINING, String TITLE, String VOLUME) {
+        this.ACTIVATION = ACTIVATION;
+        this.DEACTIVATION = DEACTIVATION;
+        this.VOLUME = VOLUME;
+        this.DURATION = DURATION;
+        this.INFO = INFO;
+        this.PRICE = PRICE;
+        this.REMAINING = REMAINING;
+        this.TITLE = TITLE;
     }
 
-    public String getDuration() {
-        return Duration;
+    public String getACTIVATION() {
+        return ACTIVATION;
     }
 
-    public String getVolume() {
-        return Volume;
+    public String getDEACTIVATION() {
+        return DEACTIVATION;
     }
 
-    public String getActivation() {
-        return Activation;
+    public String getVOLUME() {
+        return VOLUME;
     }
 
-    public String getDeactivation() {
-        return Deactivation;
+    public String getDURATION() {
+        return DURATION;
     }
 
-    public String getRemaining() {
-        return Remaining;
+    public String getINFO() {
+        return INFO;
     }
 
-    public String getInfo() {
-        return Info;
+    public String getPRICE() {
+        return PRICE;
     }
 
-    public String getPrice() {
-        return Price;
+    public String getREMAINING() {
+        return REMAINING;
     }
 
-    String Price;
-
-    public product(String title, String duration, String volume, String activation, String deactivation, String remaining, String info, String price) {
-        Title = title;
-        Duration = duration;
-        Volume = volume;
-        Activation = activation;
-        Deactivation = deactivation;
-        Remaining = remaining;
-        Info = info;
-        Price = price;
+    public String getTITLE() {
+        return TITLE;
     }
 
+    public product() {
+    }
 }
 
 

@@ -15,12 +15,12 @@ import java.io.OutputStream;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     String DB_PATH = null;
-    private static String DB_NAME = "a";
+    private static String DB_NAME = "mydb";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
     public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, 13);
         this.myContext = context;
         this.DB_PATH = "/data/data/" + context.getPackageName() + "/" + "databases/";
         Log.e("Path 1", DB_PATH);
@@ -32,9 +32,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (dbExist) {
         } else {
             this.getReadableDatabase();
-            try {
+            try
+            {
                 copyDataBase();
-            } catch (IOException e) {
+                Log.e("Path 1", "copieddatabase");
+
+            }
+            catch (IOException e)
+            {
+                Log.e("Path 1", "copydatabase");
+
                 throw new Error("Error copying database");
             }
         }
@@ -46,6 +53,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
         } catch (SQLiteException e) {
+            Log.e("Path 1", "checkdatabase");
+
         }
         if (checkDB != null) {
             checkDB.close();
@@ -70,8 +79,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void openDataBase() throws SQLException {
         String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
 
+    }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        db.disableWriteAheadLogging();
     }
 
     @Override
@@ -97,10 +112,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
     }
 
-    public Cursor query(String table) {
-        Main3Activity mm = new Main3Activity();
-        return myDataBase.query(table, null, null, null, null, null, null);
+    public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
+        return myDataBase.query(table, columns, selection, selectionArgs, groupBy, having, orderBy);
     }
 
-
+    public void delete()
+    {
+        myContext.deleteDatabase(DB_NAME);
+    }
 }
